@@ -1,26 +1,28 @@
 {
-  "author": "Andrew Sliwinski <andrewsliwinski@acm.org> (http://andrewsliwinski.com)",
-  "name": "generator",
+  "author": "Michael Williams <dinosaur@riseup.net (http://dinosaur.is)",
+  "name": "kindling",
   "description": "Project bootstrapping with an emphasis on simplicity.",
   "keywords": [
     "template",
     "scaffold",
     "scaffolding",
     "bootstrap",
-    "utility"
+    "utility",
+    "starter",
+    "generate",
+    "generator"
   ],
   "version": "1.0.1",
-  "homepage": "https://github.com/thisandagain/generator",
+  "homepage": "https://github.com/ahdinosaur/kindling",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thisandagain/generator.git"
+    "url": "https://github.com/ahdinosaur/kindling.git"
   },
   "preferGlobal": true,
   "main": "./lib/index.js",
   "bin": {
-    "generator": "./bin/index.js",
-    "generate": "./bin/index.js"
+    "kindling": "./bin/index.js"
   },
   "scripts": {
     "test": "make test"

@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 /**
- * Command line interface for generator.
+ * Command line interface for kindling.
  *
- * @package generator
+ * @package kindling
  * @author Andrew Sliwinski <andrew@diy.org>
+ * @author Michael Williams <dinosaur@riseup.net>
  */
 
 /**

@@ -1,22 +1,17 @@
-## Generator [![Build Status](https://secure.travis-ci.org/thisandagain/generator.png)](http://travis-ci.org/thisandagain/generator)
+## Generator
 #### Language agnostic project bootstrapping with an emphasis on simplicity.
 
-![Screenshot](https://raw.github.com/thisandagain/generator/master/interface.png)
+![Screenshot](https://raw.github.com/ahdinosaur/kindling/master/interface.png)
 
 ### Installation
 ```bash
-[sudo] npm install -g generator
-```
-
-Once installed, you should load the default templates:
-```bash
-generate --setup
+[sudo] npm install -g kindling
 ```
 
 ### Usage
-In order to bootstrap a project using one of the default templates you simply run `generate` and specifiy a template and project name. For example, let's create a new Node.js module called `kittycannon`:
+In order to bootstrap a project using one of the default templates you simply run `kindling` and specifiy a template and project name. For example, let's create a new Node.js module called `kittycannon`:
 ```bash
-generate --template npm --name kittycannon
+kindling --template browserify --name kittycannon
 ```
 
 ---
