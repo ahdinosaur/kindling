@@ -16,10 +16,8 @@ var colors      = require('colors'),
         .alias('h', 'help')
         .alias('t', 'template')
         .alias('n', 'name')
-        .alias('s', 'setup')
-        .describe('t', 'Template name (from ~/.generator)')
+        .describe('t', 'Template name')
         .describe('n', 'Name of project to be generated')
-        .describe('s', 'Initializes the included modules at ~/.generator');
 
 var argv        = optimist.argv,
     copy        = require('../lib/copy'),
@@ -40,16 +38,13 @@ function stderr (err) {
  * Execute
  */
 if (argv.help) return optimist.showHelp();
-if (argv.setup) {
-    setup(function (err) {
-        if (err) return stderr(err);
-        console.log('Done.'.green);
-    });
-} else {
-    // Check requirements
-    if (typeof argv.template === 'undefined' || argv.name === 'undefined') {
-        return stderr('Template (-t) and project name (-n) must be specified. See --help');
-    }
+// Check requirements
+if (typeof argv.template === 'undefined' || argv.name === 'undefined') {
+    return stderr('Template (-t) and project name (-n) must be specified. See --help');
+}
+setup(argv.template, function (err) {
+    if (err) return stderr(err);
+    console.log('Setup.'.green);
 
     // Replicate the template
     copy(argv.template, argv.name, function (err, path) {
@@ -71,4 +66,4 @@ if (argv.setup) {
             });
         });
     });
-}
+});
