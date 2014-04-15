@@ -19,6 +19,8 @@ var setupSearch = function (state, events) {
 
     stream.on('data', function(d) {
       var data = JSON.parse(d);
+      console.log(data);
+      state.loading.set(false);
       state.list.set(data.response.docs);
     });
   });
