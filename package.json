@@ -1,7 +1,8 @@
 {
-  "author": "Michael Williams <dinosaur@riseup.net (http://dinosaur.is)",
   "name": "kindling",
-  "description": "Project bootstrapping with an emphasis on simplicity.",
+  "author": "Michael Williams <dinosaur@riseup.net (http://dinosaur.is)",
+  "description": "project bootstrapping with an emphasis on simplicity.",
+  "version": "1.1.0",
   "keywords": [
     "template",
     "scaffold",
@@ -12,7 +13,6 @@
     "generate",
     "generator"
   ],
-  "version": "1.1.0",
   "homepage": "https://github.com/ahdinosaur/kindling",
   "license": "MIT",
   "repository": {

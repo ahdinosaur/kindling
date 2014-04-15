@@ -1,29 +1,35 @@
-## Generator
-#### Language agnostic project bootstrapping with an emphasis on simplicity.
+# kindling
+
+project bootstrapping with an emphasis on simplicity.
 
 ![Screenshot](https://raw.github.com/ahdinosaur/kindling/master/interface.png)
 
-### Installation
+## how to
+
+### install
+
 ```bash
 [sudo] npm install -g kindling
 ```
 
-### Usage
-In order to bootstrap a project using one of the default templates you simply run `kindling` and specifiy a template and project name. For example, let's create a new Node.js module called `kittycannon`:
+## use
+
+In order to bootstrap a project using one of the default templates you simply run `kindling` and specifiy a template and project name. For example, let's create a new browserify project called `kittycannon`:
 ```bash
 kindling --template browserify --name kittycannon
 ```
 
 ---
 
-### Default Templates
-Generator comes with a few templates to get you started. While they are usable as-is, the whole point of Generator is make the creation of custom templates as simple as possible.
+## available templates
 
-- `npm` [NPM](https://npmjs.org/) module template
-- `arduino` [Arduino](http://www.arduino.cc/) project template
+`kindling` comes with a few templates to get you started. While they are usable as-is, the whole point of `kindling` is make the creation of custom templates as simple as possible.
 
-### How Templates Work
-Templates are simply directories with any combination of files and sub-directories found within them. To create a new template simply create a new directory within your `~/.generator` path or copy one of the default templates and modify it. Upon use, Generator will walk the template looking for any instances of `__somelowercasevariable__` and prompt for a value. For example, a template including this:
+- `browserify` [browserify](https://browserify.org/) project template
+
+## how templates work
+
+Templates are directories with in '~/.kindling/node_modules/kindling-*' with a 'template' directory. To create a new template simply use the TODO `kindling-kindling` template and publish to npm as `kindling-{name}`. Upon use of a template, `kindling` will walk the template looking for any instances of `__somelowercasevariable__` and prompt for a value. For example, a template including this:
 
 ```javascript
 /**
@@ -54,7 +60,7 @@ Which will generate:
 ---
 
 ### Post Processing
-By default, Generator will look for a `makefile` and (if found) will run `make generator` after all other template processing has been completed. This is particularly handy for dealing with template dependencies that may change over time (like git repositories or even [NPM](https://npmjs.org/) modules). For example:
+By default, `kindling` will look for a `makefile` and (if found) will run `make generator` after all other template processing has been completed. This is particularly handy for dealing with template dependencies that may change over time (like git repositories or even [NPM](https://npmjs.org/) modules). For example:
 
 ```bash
 generator:
@@ -82,5 +88,5 @@ npm test
 ```
 
 ### Notes
-- C, C++, and PHP often use the `__SOMETHING__` pattern for [macros](http://gcc.gnu.org/onlinedocs/gcc-3.1/cpp/Standard-Predefined-Macros.html). For this reason, Generator will ignore any variable instances that are specified in caps. This works fine for C and C++ users, but given that such macros in PHP are case insensitive, PHP users should keep this limitation in mind while designing templates.
+- C, C++, and PHP often use the `__SOMETHING__` pattern for [macros](http://gcc.gnu.org/onlinedocs/gcc-3.1/cpp/Standard-Predefined-Macros.html). For this reason, `kindling` will ignore any variable instances that are specified in caps. This works fine for C and C++ users, but given that such macros in PHP are case insensitive, PHP users should keep this limitation in mind while designing templates.
 - "Good coders code. Great reuse." quote shamelessly stolen from [Peteris Krumins' blog](http://www.catonmat.net/) (which you should read).
