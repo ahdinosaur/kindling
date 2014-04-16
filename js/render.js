@@ -6,6 +6,7 @@ var spinner = require('./spinner')();
 
 var render = function (state) {
   return h(".app", [
+    h("h2", "Generators"),
     mercury.partial(renderSearch, state.search, state.sinks),
     mercury.partial(renderLoading, state.loading),
     mercury.partial(renderList, state, state.sinks),
@@ -13,13 +14,16 @@ var render = function (state) {
 };
 
 var renderSearch = function (search, sinks) {
-  return h("input.search", {
-    type: "text",
-    placeholder: "enter search here",
-    value: search,
-    name: "search",
-    "data-event": mercury.changeEvent(sinks.search), 
-  });
+  return h(".ui.large.fluid.icon.input", [
+    h("input.search", {
+      type: "text",
+      placeholder: "Search",
+      value: search,
+      name: "search",
+      "data-event": mercury.changeEvent(sinks.search), 
+    }),
+    h("i.search.icon"),
+  ]);
 };
 
 var renderLoading = function (loading) {
@@ -41,7 +45,18 @@ var renderList = function (state, sinks) {
 
 var renderItem = function (item, sinks) {
   return h(".module", [
-    h("p", item.name + " by " + item.author),
+    h("h3", [
+      h("a", {
+        href: item.homepage ||
+          ("https://npmjs.org/package/" + item.name),
+      },
+      item.name),
+    ]),
+    h("h4", "by " + item.author),
+    h("p", item.description),
+    h(".keywords", item.keywords.map(function (kw) {
+      return h(".ui.label", kw);
+    })),
   ]);
 };
 

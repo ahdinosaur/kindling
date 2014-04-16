@@ -1,10 +1,16 @@
+require('./index.less');
+
+if (process.env.NODE_ENV === "development") {
+  document.body.innerHTML += "<script src=\"/-/live-reload.js\"></script>";
+}
+
 var Skateboard = require('skateboard');
 var mercury = require('mercury');
 
-var Input = require("./lib/input.js")
-var State = require("./lib/state.js")
-var Render = require("./lib/render.js")
-var Update = require("./lib/update.js")
+var Input = require("./js/input.js")
+var State = require("./js/state.js")
+var Render = require("./js/render.js")
+var Update = require("./js/update.js")
 
 var setupSearch = function (state, events) {
   Skateboard("http://npmsearch.com", function (stream) {
