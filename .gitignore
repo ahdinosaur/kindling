@@ -1,6 +1,4 @@
-/* MacOS */
-.DS_Store
-
-/* NPM */
-/node_modules
-npm-debug.log
+node_modules
+npm-debug.log*
+/coverage
+/.nyc_output
